@@ -44,6 +44,22 @@ console.log(month);
 month.splice(2, 0, "March");
 console.log(month);
 
-console.log([...user]);
+// spread operator
+console.log({ ...user });
 console.log(...myArray);
 console.log(...month);
+
+// destructuring object and array
+const firstName = user.firstName;
+const lastName = user.lastName;
+console.log("Hello, my name is " + firstName + " " + lastName + ".");
+const { age: localAge } = user;
+console.log("I am " + localAge + " years old.");
+[firstArray, secondArray] = myArray;
+console.log(firstArray);
+console.log(secondArray);
+let a = 1;
+let b = 2;
+console.log("Before swapped : [" + a + ", " + b + "]");
+[a, b] = [b, a];
+console.log("After swapped : [" + a + ", " + b + "]");
