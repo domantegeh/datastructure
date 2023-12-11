@@ -18,6 +18,19 @@ console.log(user);
 delete user["home world"];
 console.log(user);
 
+const restaurant = {
+  name: "Bakso Mang Dicoding",
+  city: "Bandung",
+  "favorite drink": "Es Teh",
+  "favorite food": "Bakso",
+  isVegan: false,
+};
+const name = restaurant.name;
+const favoriteDrink = restaurant["favorite drink"];
+console.log(restaurant);
+console.log(name);
+console.log(favoriteDrink);
+
 // array
 let myArray = ["Chocolate", 42.5, 22, true, "Programming"];
 console.log(myArray);
@@ -44,6 +57,14 @@ console.log(month);
 month.splice(2, 0, "March");
 console.log(month);
 
+let evenNumber = [];
+for (let i = 1; i <= 100; i++) {
+  if (i % 2 == 0) {
+    evenNumber.push(i);
+  }
+}
+console.log(evenNumber);
+
 // spread operator
 console.log({ ...user });
 console.log(...myArray);
@@ -63,3 +84,35 @@ let b = 2;
 console.log("Before swapped : [" + a + ", " + b + "]");
 [a, b] = [b, a];
 console.log("After swapped : [" + a + ", " + b + "]");
+
+// map
+const capital = new Map([
+  ["Jakarta", "Indonesia"],
+  ["London", "England"],
+  ["Tokyo", "Japan"],
+]);
+capital.set("New Delhi", "India");
+console.log(capital.get("London"));
+console.log(capital);
+console.log(capital.size);
+
+const currency = new Map([
+  ["USD", 14000],
+  ["JPY", 131],
+  ["SGD", 11000],
+  ["MYR", 3500],
+]);
+
+const priceInJPY = 5000;
+const priceInIDR = priceInJPY * currency.get("JPY");
+console.log(currency);
+console.log(priceInJPY);
+console.log(priceInIDR);
+
+// set
+const numberSet = new Set([1, 4, 6, 4, 1]);
+numberSet.add(5);
+numberSet.add(10);
+numberSet.add(6);
+numberSet.delete(4);
+console.log(numberSet);
